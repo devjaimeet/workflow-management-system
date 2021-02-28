@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taskboard :: Workflew WMS</title>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css" integrity="sha512-wl80ucxCRpLkfaCnbM88y4AxnutbGk327762eM9E/rRTvY/ZGAHWMZrYUq66VQBYMIYDFpDdJAOGSLyIPHZ2IQ==" crossorigin="anonymous" />
+<link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+    <div id="main_container" style="display:none;">
+           <header class="text-gray-700 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="hover:text-gray-900"></a>
+    </nav>
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <img class="w-48 lg:justify-center" src='assets/brand/brand-j.png'/>
+    </a>
+    </a>
+    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+      <button onclick="mainApp.logout();" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<hr/>
+
+		   <section class="text-gray-600 body-font">
+  <div class="container flex flex-wrap px-5 py-6 mx-auto items-center">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Taskboard</h1>
+  </div>
+</section>
+<nav class="container">
+  <ol class="list-reset py-4 pl-4 rounded flex bg-grey-light text-grey">
+    <li class="px-2"><a href="index.html" class="no-underline text-indigo">Dashboard</a></li>
+    <li>/</li>
+    <li class="px-2"><a href="page1.html" class="no-underline text-indigo">Taskboard</a></li>
+  </ol>
+</nav>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-2 mx-auto flex flex-wrap">
+        <div class="px-2 w-1/2">
+          <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+            <div class="text-center relative z-10 w-full">
+              <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Assign Task</h2>
+              <p class="leading-relaxed">Assign a New  Task.</p>
+              <a href="page1-1.html" class="mt-3 text-indigo-500 inline-flex items-center">Add New Task
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="px-2 w-1/2">
+          <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+            <div class="text-center relative z-10 w-full">
+              <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Check Assign Task</h2>
+              <p class="leading-relaxed">Checkout all the assigned task.</p>
+              <a href="page1-2.html" class="mt-3 text-indigo-500 inline-flex items-center">View Task
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        
+
+    </div>
+	
+	<footer class="text-gray-600 body-font">
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="text-gray-500 text-sm text-center sm:text-left">© 2021 Workflew BCA VBSPU & MCMT Project I —
+        <a href="https://devjaimeet.github.io/" class="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@devjaimeet</a>
+      </p>
+      <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Workflew - Worflow Management Software</span>
+    </div>
+  </div>
+</footer>
+    <script src="fireBase.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

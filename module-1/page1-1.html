@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taskboard :: Workflew WMS</title>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css" integrity="sha512-wl80ucxCRpLkfaCnbM88y4AxnutbGk327762eM9E/rRTvY/ZGAHWMZrYUq66VQBYMIYDFpDdJAOGSLyIPHZ2IQ==" crossorigin="anonymous" />
+<link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+    <div id="main_container" style="display:none;">
+           <header class="text-gray-700 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="mr-5 hover:text-gray-900"></a>
+      <a class="hover:text-gray-900"></a>
+    </nav>
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <img class="w-48 lg:justify-center" src='assets/brand/brand-j.png'/>
+    </a>
+    </a>
+    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+      <button onclick="mainApp.logout();" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<hr/>
+
+		   <section class="text-gray-600 body-font">
+  <div class="container flex flex-wrap px-5 py-6 mx-auto items-center">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Assign New Task</h1>
+  </div>
+</section>
+<nav class="container">
+  <ol class="list-reset py-4 pl-4 rounded flex bg-grey-light text-grey">
+    <li class="px-2"><a href="index.html" class="no-underline text-indigo">Dashboard</a></li>
+    <li>/</li>
+    <li class="px-2"><a href="page1.html" class="no-underline text-indigo">Taskboard</a></li>
+	<li>/</li>
+	<li class="px-2"><a href="page1-1.html" class="no-underline text-indigo">Assign New Task</a></li>
+  </ol>
+</nav>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-6 mx-auto flex flex-wrap items-center">
+    
+    <div class="lg:w-2/4 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col">
+      <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Assign Task</h2>
+      <div class="relative mb-4">
+        <label for="full-name" class="leading-7 text-sm text-gray-600">Employee</label>
+		<select id="namebox" name="full-name" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+  <option value="Aparchit Kumar">Aparchit Kumar</option>
+  <option value="Vyakti Singh">Vyakti Singh</option>
+  <option value="Aadmi Verma">Aadmi Verma</option>
+  <option value="Insaan Prakash">Insaan Prakash</option>
+</select>
+      </div>
+      <div class="relative mb-4">
+        <label for="email" class="leading-7 text-sm text-gray-600">Task</label>
+        <input type="email" id="rollbox" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+	  <div class="relative mb-4">
+        <label for="email" class="leading-7 text-sm text-gray-600">Priority</label>
+        <input type="email" id="secbox" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+	  <div class="relative mb-4">
+        <label for="email" class="leading-7 text-sm text-gray-600">Due Date</label>
+        <input type="date" id="genbox" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <button id="insert" class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Add Task</button>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<br>
+        
+
+    </div>
+	
+	<footer class="text-gray-600 body-font">
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="text-gray-500 text-sm text-center sm:text-left">© 2021 Workflew BCA VBSPU & MCMT Project I —
+        <a href="https://devjaimeet.github.io/" class="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@devjaimeet</a>
+      </p>
+      <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Workflew - Worflow Management Software</span>
+    </div>
+  </div>
+</footer>
+<script src="app.js"></script>
+    <script src="fireBase.js"></script>
+    <script src="main.js"></script>
+	
+</body>
+</html>
